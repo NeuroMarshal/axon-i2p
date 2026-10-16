@@ -1,0 +1,25 @@
+[package]
+name = "axon-i2p"
+description = "An I2P router built on Axon that joins the real I2P network"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/NeuroMarshal/axon-i2p"
+publish = false
+
+[dependencies]
+# Axon is not on crates.io yet; clone it next to this repository.
+axon-core = { path = "../axon" }
+axon-addons = { path = "../axon/addons" }
+axon-runtime = { path = "../axon/runtime", features = ["https"] }
+bytes = "1.12.1"
+getrandom = "0.2.17"
+tokio = { version = "1.53", features = ["rt-multi-thread", "macros", "time", "sync", "net", "io-util", "signal"] }
+data-encoding = "2.11"
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+num-bigint = "0.4"
+sha1 = "0.10"
+sha2 = "0.11"
+miniz_oxide = "0.8"
