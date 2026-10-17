@@ -3,12 +3,14 @@
 //! The router is an Axon node: [`plane::I2pPlane`] is its forwarding plane,
 //! its links speak NTCP2 through Axon's foreign wire layer, and the runtime
 //! drives it like any other node. It joins the network from the reseed
-//! servers, keeps tunnels through other routers and gives a client
-//! destination the means to reach I2P sites.
+//! servers, keeps tunnels through other routers and gives local programs a
+//! client destination to reach I2P sites from, over SOCKS5 or an HTTP proxy.
 //!
 //! It is a client: it publishes no address, routes no tunnels for others and
 //! hosts no sites yet.
 
+pub mod addressbook;
+pub mod daemon;
 pub mod data;
 pub mod destination;
 pub mod garlic;

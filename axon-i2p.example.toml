@@ -1,0 +1,23 @@
+# Copy this file, adjust it and run `axon-i2p FILE`.
+
+# The address book and the list of known routers live here. A relative
+# path is taken from this file's directory.
+data_dir = "axon-i2p-data"
+
+# Point programs at one or both proxies. Only I2P names are reachable:
+# name.i2p from the address book and <base32>.b32.i2p.
+socks = "127.0.0.1:4447"
+http_proxy = "127.0.0.1:4444"
+
+[tunnels]
+inbound = 2
+outbound = 2
+# Routers per tunnel, 1 to 4. Fewer is faster and less anonymous.
+hops = 3
+
+[addressbook]
+subscriptions = [
+    "http://i2p-projekt.i2p/hosts.txt",
+    "http://stats.i2p/cgi-bin/newhosts.txt",
+]
+refresh_hours = 12
